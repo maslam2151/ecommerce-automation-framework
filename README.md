@@ -1,17 +1,28 @@
 # E-commerce Automation Framework
 
-Automated UI testing framework for an e-commerce application using **Java, Selenium WebDriver, and TestNG**.
-The framework follows the **Page Object Model (POM)** design pattern and is structured for **scalability, maintainability, and CI/CD integration**.
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green)
+![TestNG](https://img.shields.io/badge/TestNG-Automation-red)
+![Build](https://img.shields.io/badge/Build-Maven-blue)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+A **UI automation testing framework** built using **Java, Selenium WebDriver, and TestNG** to validate core workflows of an e-commerce web application.
+
+The framework follows the **Page Object Model (POM)** design pattern and is designed for **scalability, maintainability, and CI/CD integration**.
+
+This project simulates real-world **QA automation practices used in production test frameworks**.
 
 ---
 
 # Table of Contents
 
 * [Project Overview](#project-overview)
-* [Tech Stack](#tech-stack)
+* [Framework Components](#framework-components)
 * [Framework Architecture](#framework-architecture)
+* [Test Automation Workflow](#test-automation-workflow)
 * [Project Structure](#project-structure)
-* [Features](#features)
+* [Tech Stack](#tech-stack)
+* [Framework Features](#framework-features)
 * [Test Scenarios](#test-scenarios)
 * [Framework Execution](#framework-execution)
 * [Test Reports](#test-reports)
@@ -23,53 +34,76 @@ The framework follows the **Page Object Model (POM)** design pattern and is stru
 
 # Project Overview
 
-This project demonstrates a **Selenium automation framework** designed to test core workflows of an e-commerce web application.
+This project demonstrates a **Selenium automation framework** designed to test key workflows of an e-commerce platform.
 
-The framework automates common user scenarios such as:
+The framework automates common user interactions such as:
 
-* User login
-* Product selection
-* Add product to cart
-* Cart validation
+* User authentication
+* Product browsing
+* Adding products to the cart
+* Cart verification
 
-The automation framework is built using the **Page Object Model (POM)** to ensure:
+The framework follows the **Page Object Model (POM)** design pattern to maintain a clean separation between:
 
-* Clean separation of test logic
-* Reusable page components
-* Easy maintenance and scalability
+* Test logic
+* Page UI interactions
+* Utility components
+
+This improves **maintainability, scalability, and reusability of automation code**.
 
 ---
 
-# Tech Stack
+# Framework Components
 
-| Technology         | Purpose                            |
-| ------------------ | ---------------------------------- |
-| Java               | Programming language               |
-| Selenium WebDriver | Browser automation                 |
-| TestNG             | Test execution framework           |
-| Maven              | Dependency management & build tool |
-| Page Object Model  | Framework design pattern           |
-| Git & GitHub       | Version control                    |
+The automation framework contains the following major components:
+
+| Component       | Responsibility                        |
+| --------------- | ------------------------------------- |
+| Test Classes    | Define automation scenarios           |
+| Page Classes    | Encapsulate page elements and actions |
+| Driver Factory  | Manages WebDriver initialization      |
+| Test Listener   | Captures screenshots on failures      |
+| Utility Classes | Provide reusable helper functions     |
 
 ---
 
 # Framework Architecture
 
-The project follows the **Page Object Model (POM)** design pattern.
+The framework follows a **Page Object Model (POM)** architecture.
 
-Each page of the application has its own **Page Class**, which contains:
+Each page of the application has its own **Page Class** containing:
 
 * Element locators
 * Page actions
 * UI validations
 
-Tests interact with these page objects instead of directly interacting with Selenium.
+Tests interact with **page objects**, not directly with Selenium commands.
 
 Benefits:
 
-* Improves code readability
-* Reduces duplication
-* Makes test maintenance easier
+* Improves readability
+* Reduces code duplication
+* Simplifies maintenance
+* Promotes reusable automation components
+
+Architecture Flow:
+
+```
+Test Classes → Page Objects → WebDriver → Web Application
+```
+
+---
+
+# Test Automation Workflow
+
+Automation execution follows this flow:
+
+1. WebDriver initializes the browser.
+2. TestNG triggers the test suite.
+3. Test classes execute automation steps.
+4. Page Objects interact with web elements.
+5. TestNG generates execution reports.
+6. Screenshots are captured for failures.
 
 ---
 
@@ -108,15 +142,29 @@ ecommerce-automation-framework
 
 ---
 
-# Features
+# Tech Stack
 
-* Automated login workflow testing
-* Product add-to-cart validation
+| Category          | Technology         |
+| ----------------- | ------------------ |
+| Language          | Java               |
+| Automation        | Selenium WebDriver |
+| Testing Framework | TestNG             |
+| Build Tool        | Maven              |
+| Design Pattern    | Page Object Model  |
+| Version Control   | Git / GitHub       |
+
+---
+
+# Framework Features
+
+The framework includes the following features:
+
 * Page Object Model architecture
+* Modular automation design
 * Screenshot capture on test failure
-* Maven-based project structure
-* TestNG execution and reporting
-* Clean modular framework design
+* TestNG-based execution
+* Maven dependency management
+* Clean and scalable project structure
 
 ---
 
@@ -128,10 +176,10 @@ Validates that a user can successfully log into the application.
 
 Steps:
 
-1. Navigate to login page
+1. Navigate to the login page
 2. Enter valid credentials
-3. Submit login
-4. Verify inventory page loads
+3. Submit login request
+4. Verify inventory page loads successfully
 
 ---
 
@@ -142,9 +190,10 @@ Validates that a product can be added to the cart.
 Steps:
 
 1. Login to the application
-2. Add product to cart
-3. Open cart
-4. Verify correct product is displayed
+2. Select a product
+3. Add the product to the cart
+4. Open the cart page
+5. Verify the correct product is displayed
 
 ---
 
@@ -152,48 +201,48 @@ Steps:
 
 Example automation execution showing successful login and product selection.
 
-### Inventory Validation
-
-
-![Cart Screenshot](screenshots/framework-cart.png)
-
-### Cart Page
-
-Product successfully added to the cart.
+### Inventory Page Validation
 
 ![Automation Run](screenshots/framework-run.png)
 
+---
+
+### Cart Page Validation
+
+Product successfully added to the cart.
+
+![Cart Screenshot](screenshots/framework-cart.png)
 
 ---
 
 # Test Reports
 
-After executing tests using Maven, reports are generated in:
+After executing tests using Maven, TestNG generates reports in:
 
 ```
 target/surefire-reports/
 ```
 
-Open:
+Open the report file:
 
 ```
 index.html
 ```
 
-to view the TestNG report in your browser.
+to view execution results.
 
-The report includes:
+Reports include:
 
-* Test execution results
-* Passed/Failed tests
+* Passed / Failed tests
 * Execution time
 * Detailed test logs
+* Stack traces for failures
 
 ---
 
 # Running the Tests
 
-Run all tests using Maven:
+Execute the entire test suite using Maven:
 
 ```
 mvn test
@@ -209,13 +258,14 @@ This will:
 
 # Future Improvements
 
-Possible enhancements for the framework:
+Potential enhancements for production-level automation:
 
 * Parallel test execution
-* Jenkins CI/CD integration
-* Selenium Grid for cross-browser testing
+* Selenium Grid integration
+* Jenkins CI/CD pipeline
 * Allure reporting integration
 * Dockerized test execution
+* Cross-browser testing
 
 ---
 
