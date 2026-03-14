@@ -203,7 +203,7 @@ Example automation execution showing successful login and product selection.
 
 ### Inventory Page Validation
 
-![Automation Run](screenshots/framework-run.png)
+![Cart Screenshot](screenshots/framework-cart.png)
 
 ---
 
@@ -211,7 +211,7 @@ Example automation execution showing successful login and product selection.
 
 Product successfully added to the cart.
 
-![Cart Screenshot](screenshots/framework-cart.png)
+![Automation Run](screenshots/framework-run.png)
 
 ---
 
