@@ -152,15 +152,17 @@ Steps:
 
 Example automation execution showing successful login and product selection.
 
-### Login + Inventory Page
+### Inventory Validation
 
-![Automation Run](screenshots/framework-run.png)
 
-### Cart Validation
+![Cart Screenshot](screenshots/framework-cart.png)
+
+### Cart Page
 
 Product successfully added to the cart.
 
-![Cart Screenshot](screenshots/framework-cart.png)
+![Automation Run](screenshots/framework-run.png)
+
 
 ---
 
@@ -220,6 +222,7 @@ Possible enhancements for the framework:
 # Author
 
 Mohammed Aslam
+Java Backend / QA Automation Engineer
 
 GitHub:
 https://github.com/maslam2151
